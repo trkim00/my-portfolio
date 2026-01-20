@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tae Rim Kim - Data Science Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @layer base {
+            :root {
+                --color-primary-bg: #1a1a2e;
+                --color-secondary-bg: #2a2a4a;
+                --color-accent: #007bff;
+                --color-text: #e0e0e0;
+                --color-light-text: #a0a0a0;
+                --color-border: #3e2f5b;
+                --color-card-shadow: rgba(0, 0, 0, 0.2);
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': 'var(--color-primary-bg)',
+                        'secondary-bg': 'var(--color-secondary-bg)',
+                        'accent': 'var(--color-accent)',
+                        'text-primary': 'var(--color-text)',
+                        'text-secondary': 'var(--color-light-text)',
+                        'border-color': 'var(--color-border)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    boxShadow: {
+                        'card': '0 8px 30px var(--color-card-shadow)',
+                        'glass': '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)'
+                    },
+                    backdropFilter: {
+                        'none': 'none',
+                        'blur': 'blur(10px)',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(10px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: 0, transform: 'translateX(-20px)' },
+                            '100%': { opacity: 1, transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: 0, transform: 'translateX(20px)' },
+                            '100%': { opacity: 1, transform: 'translateX(0)' },
+                        },
+                        popIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: 0 },
+                            '100%': { transform: 'scale(1)', opacity: 1 },
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.7s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.7s ease-out forwards',
+                        'pop-in': 'popIn 0.5s ease-out forwards',
+                    },
+                },
+            },
+            plugins: [
+                function ({ addUtilities }) {
+                    addUtilities({
+                        '.card-gradient': {
+                            'background-image': 'linear-gradient(145deg, var(--color-secondary-bg) 0%, #3a3a5a 100%)',
+                        },
+                        '.skill-tag-gradient': {
+                            'background-image': 'linear-gradient(45deg, #3a3a5a 0%, #4a4a6a 100%)',
+                        }
+                    }, ['responsive', 'hover']);
+                }
+            ],
+        };
+    </script>
+    <style type="text/tailwindcss">
+        /* Custom styles not easily expressed in Tailwind config */
+        .glass-card {
+            background-color: rgba(42, 42, 74, 0.6); /* secondary-bg with transparency */
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-border);
+        }
+        .header-glass {
+            background-color: rgba(26, 26, 46, 0.8); /* primary-bg with transparency */
+            backdrop-filter: blur(10px);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-primary-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-border);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-accent);
+        }
+    </style>
+</head>
+<body class="bg-primary-bg text-text-primary font-sans antialiased leading-relaxed min-h-screen overflow-x-hidden">
+
+    <header id="main-header" class="header-glass fixed top-0 left-0 right-0 z-50 py-4 shadow-lg">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div id="profile-picture-header" class="hidden md:block">
+                    <img src='https://i.postimg.cc/6QXHBbZD/1757079336373.jpg' alt='Tae Rim Kim Profile' class="w-12 h-12 rounded-full border-2 border-accent object-cover animate-pop-in"/>
+                </div>
+                <h1 class="text-2xl font-display font-bold text-accent animate-slide-in-left">
+                    <a href="#home" onclick="showPage('home-page'); scrollToSection('hero');">Tae Rim Kim</a>
+                </h1>
+            </div>
+            <nav class="hidden md:flex space-x-6 animate-slide-in-right">
+                <a href="#about" onclick="showPage('home-page'); scrollToSection('hero');" class="text-text-primary hover:text-accent transition-colors duration-300 font-medium">About Me</a>
+                <a href="#projects" onclick="showPage('home-page'); scrollToSection('projects-section');" class="text-text-primary hover:text-accent transition-colors duration-300 font-medium">Projects</a>
+                <a href="#skills" onclick="showPage('home-page'); scrollToSection('skills-section');" class="text-text-primary hover:text-accent transition-colors duration-300 font-medium">Skills</a>
+                <a href="#interests" onclick="showPage('home-page'); scrollToSection('interests-section');" class="text-text-primary hover:text-accent transition-colors duration-300 font-medium">Interests</a>
+                <a href="https://linkedin.com/in/TrKim" target="_blank" rel="noopener noreferrer" class="text-text-primary hover:text-accent transition-colors duration-300 font-medium flex items-center">
+                    LinkedIn
+                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2zM8 11v7h3v-7H8zm1.5-3.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18 17.5c0-4.5-3.5-4.2-3.5-4.2V11h-3v7h3v-3.8c0-1.5 1-1.3 1-1.3s1 0 1 1.3V18h3v-6.5c0-2.3-1.5-3.5-3.5-3.5z"/></svg>
+                </a>
+            </nav>
+            <button id="menu-button" class="md:hidden text-text-primary hover:text-accent focus:outline-none z-50">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="fixed inset-0 bg-primary-bg bg-opacity-95 z-40 hidden flex-col items-center justify-center space-y-8 text-2xl font-display font-medium">
+            <button id="close-menu-button" class="absolute top-6 right-6 text-text-primary hover:text-accent focus:outline-none">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <a href="#about" onclick="showPage('home-page'); scrollToSection('hero'); toggleMobileMenu();" class="text-text-primary hover:text-accent transition-colors duration-300">About Me</a>
+            <a href="#projects" onclick="showPage('home-page'); scrollToSection('projects-section'); toggleMobileMenu();" class="text-text-primary hover:text-accent transition-colors duration-300">Projects</a>
+            <a href="#skills" onclick="showPage('home-page'); scrollToSection('skills-section'); toggleMobileMenu();" class="text-text-primary hover:text-accent transition-colors duration-300">Skills</a>
+            <a href="#interests" onclick="showPage('home-page'); scrollToSection('interests-section'); toggleMobileMenu();" class="text-text-primary hover:text-accent transition-colors duration-300">Interests</a>
+            <a href="https://linkedin.com/in/TrKim" target="_blank" rel="noopener noreferrer" class="text-text-primary hover:text-accent transition-colors duration-300 flex items-center">
+                LinkedIn
+                <svg class="ml-2 w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2zM8 11v7h3v-7H8zm1.5-3.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18 17.5c0-4.5-3.5-4.2-3.5-4.2V11h-3v7h3v-3.8c0-1.5 1-1.3 1-1.3s1 0 1 1.3V18h3v-6.5c0-2.3-1.5-3.5-3.5-3.5z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-8"> <section id="home-page" class="view">
+            <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-border-color">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-bg via-secondary-bg to-primary-bg opacity-50"></div>
+                <div class="absolute top-0 right-0 w-1/3 h-full bg-accent opacity-5 blur-[120px] rounded-full transform translate-x-1/2"></div>
+                
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                        
+                        <div class="w-full md:w-5/12 flex flex-col items-center md:items-start text-center md:text-left animate-slide-in-left">
+                            <div class="relative group mb-8">
+                                <div class="absolute -inset-1 bg-gradient-to-r from-accent to-purple-600 rounded-full blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
+                                <img src='https://i.postimg.cc/6QXHBbZD/1757079336373.jpg' alt='Tae Rim Kim Profile' class="relative w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-primary-bg shadow-2xl"/>
+                            </div>
+                            <h1 class="text-4xl md:text-5xl font-display font-extrabold text-white mb-2">
+                                Tae Rim Kim
+                            </h1>
+                            <p class="text-xl text-accent font-medium mb-6">Data Science Student @ Purdue</p>
+                            
+                            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-text-secondary">
+                                <div class="flex items-center bg-secondary-bg px-3 py-1.5 rounded-full border border-border-color">
+                                    <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    Lafayette, IN
+                                </div>
+                                <div class="flex items-center bg-secondary-bg px-3 py-1.5 rounded-full border border-border-color">
+                                    <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                                    Class of 2026
+                                </div>
+                                <a href="mailto:kim3217@purdue.edu" class="flex items-center bg-secondary-bg px-3 py-1.5 rounded-full border border-border-color hover:border-accent hover:text-white transition-colors">
+                                    <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    kim3217@purdue.edu
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="w-full md:w-7/12 animate-slide-in-right">
+                            <div class="glass-card p-8 rounded-2xl relative">
+                                <h2 class="text-2xl font-display font-bold text-white mb-6">Bridging Raw Data & Actionable Insights</h2>
+                                <div class="space-y-4 text-text-primary text-lg leading-relaxed">
+                                    <p>
+                                        I am a Data Science student specializing in <strong>Machine Learning</strong>, <strong>Computer Vision</strong>, and <strong>Large Scale Analytics</strong>. My goal is to transform complex datasets into clear, strategic decisions.
+                                    </p>
+                                    <p>
+                                        Currently, I'm a Research Assistant at the <strong>SIMPLE Lab</strong>, working on LiDAR processing and LLM pipelines. When I'm not coding, you can find me on the baseball field or behind a camera lens, finding the signal in the noise.
+                                    </p>
+                                </div>
+                                
+                                <div class="mt-8 flex flex-wrap gap-4">
+                                    <a href="#projects" onclick="scrollToSection('projects-section')" class="px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-blue-600 transition-all transform hover:scale-105 shadow-lg flex items-center">
+                                        View Projects
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                                    </a>
+                                    <a href="#skills" onclick="scrollToSection('skills-section')" class="px-6 py-3 bg-transparent border border-border-color text-text-primary font-medium rounded-lg hover:bg-secondary-bg hover:border-accent transition-all">
+                                        Check Skills
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects-section" class="py-16 md:py-24 bg-primary-bg border-t border-border-color animate-fade-in">
+                <div class="container mx-auto px-6 max-w-6xl">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-12 text-center animate-slide-in-left">My Projects</h2>
+                    <div id="project-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        </div>
+                </div>
+            </section>
+
+            <section id="skills-section" class="py-16 md:py-24 bg-secondary-bg border-t border-border-color animate-fade-in">
+                <div class="container mx-auto px-6 max-w-6xl">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-12 text-center animate-slide-in-right">Technical Skills</h2>
+                    <div id="skills-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        </div>
+                </div>
+            </section>
+
+            <section id="interests-section" class="py-16 md:py-24 bg-primary-bg border-t border-border-color animate-fade-in">
+                <div class="container mx-auto px-6 max-w-6xl">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-12 text-center">Beyond the Code</h2>
+                    <p class="text-lg text-text-secondary text-center mb-16 max-w-2xl mx-auto">
+                        Balancing data science with competitive sports and creative arts helps me maintain a unique perspective on leadership and detail.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-display font-bold text-accent flex items-center">
+                                <span class="mr-3">⚾</span> Strategic Focus
+                            </h3>
+                            <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+                                <div class="aspect-video bg-gray-700 rounded-lg mb-4 overflow-hidden relative">
+                                    <img src="https://i.postimg.cc/BZBJ3R1Y/IMG_4588.jpg" alt="Baseball Pitching" class="w-full h-full object-cover object-bottom transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <h4 class="text-xl font-bold text-white mb-2">Pitcher & Third Baseman</h4>
+                                <p class="text-text-secondary leading-relaxed">
+                                    I thrive on the strategic challenges of baseball. Pitching requires controlling the game's pace and analyzing opponent weaknesses, while playing third base demands instant reaction to hard-hit balls. I bring this same discipline, focus, and analytical mindset to every data project I tackle.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-display font-bold text-accent flex items-center">
+                                <span class="mr-3">📷</span> Photography
+                            </h3>
+                            <p class="text-text-primary leading-relaxed">
+                                My photography journey spans both film and digital mediums. Whether capturing street scenes or landscapes, I focus on composition and lighting to find the signal in the noise. It teaches me to look at the world from different angles—a skill that is invaluable in data science.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
+                                    <img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=600&auto=format&fit=crop" alt="Film Camera" class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
+                                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=600&auto=format&fit=crop" alt="Photography Setup" class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
+                                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=600&auto=format&fit=crop" alt="Landscape Photo" class="w-full h-full object-cover rounded">
+                                </div>
+                                <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300 flex items-center justify-center bg-secondary-bg">
+                                    <span class="text-text-secondary text-sm text-center px-2">Your photo here</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="project-detail-page" class="view hidden py-16 md:py-20 bg-primary-bg min-h-screen">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <button onclick="showPage('home-page'); scrollToSection('projects-section');" class="text-text-secondary hover:text-accent transition-colors duration-300 mb-8 flex items-center group animate-fade-in">
+                    <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    <span class="font-medium">&larr; Back to Projects</span>
+                </button>
+
+                <h2 id="project-detail-title" class="text-4xl md:text-5xl font-display font-bold text-white mb-8 animate-slide-in-left">Project Title</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="md:col-span-2 space-y-6 animate-fade-in delay-200">
+                        <h3 class="text-2xl font-display font-semibold text-accent">Overview</h3>
+                        <div id="project-detail-long-desc" class="text-lg text-text-primary leading-relaxed space-y-4">
+                            </div>
+                    </div>
+                    <div class="md:col-span-1 space-y-6 animate-fade-in delay-300">
+                        <h3 class="text-2xl font-display font-semibold text-accent">Project Details</h3>
+                        <ul id="project-detail-meta" class="list-none space-y-3 text-lg text-text-secondary">
+                            <li><strong>Skills Used:</strong> <span id="project-detail-skills" class="text-text-primary"></span></li>
+                            <li><strong>Publication:</strong> <span id="project-detail-publications" class="text-text-primary"></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="project-detail-media" class="animate-fade-in delay-400">
+                    <h3 class="text-2xl font-display font-semibold text-accent mb-6">Demonstration / Visuals</h3>
+                    <div id="project-detail-video-container" class="relative overflow-hidden rounded-lg shadow-xl mb-8 border border-border-color aspect-video">
+                        <div class="absolute inset-0 flex items-center justify-center bg-secondary-bg text-text-secondary text-xl font-mono p-4">
+                            No demo video available for this project.
+                        </div>
+                    </div>
+                </div>
+
+                 <div id="project-detail-links" class="flex flex-wrap gap-4 mt-12 animate-fade-in delay-500">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const profilePicUrl = 'https://i.postimg.cc/6QXHBbZD/1757079336373.jpg';
+        const projects = [
+            {
+                id: 'lidar-point-cloud',
+                title: 'LiDAR Point Cloud Processing & Segmentation',
+                shortDesc: "Explored large-scale LiDAR point cloud data using unsupervised learning, CNNs, and GCNs for advanced analysis.",
+                longDesc: "<p>Conducted extensive research at SIMPLE Lab, Purdue University, focusing on the processing and segmentation of large-scale LiDAR point cloud data. This involved applying advanced unsupervised learning techniques, Convolutional Neural Networks (CNNs), and Graph Convolutional Networks (GCNs) to extract meaningful insights and create robust segmentation models.</p><p>Collaborated with a team of 10 lab members, contributing to weekly research seminars and presenting findings to peers and faculty. This project enhanced my skills in 3D data processing, machine learning model development, and collaborative research environments.</p>",
+                skills: ['LiDAR', 'Unsupervised Learning', 'CNNs', 'GCNs', 'Python', 'PointCloud'],
+                publications: [],
+                githubLink: 'https://github.com/your-github/lidar-project', // Placeholder
+                demoLink: ''
+            },
+            {
+                id: 'census-data-analysis',
+                title: 'Census Data Analysis for Job Inequality',
+                shortDesc: "Processed large-scale census data from 6229 Block Groups in Chicago, IL to analyze job accessibility and inequality.",
+                longDesc: "<p>Undertook a comprehensive analysis of large-scale census data covering 6229 Block Groups in Chicago, IL. The primary objective was to investigate job inequality by evaluating public transport accessibility and median wages across different demographic areas.</p><p>Utilized Pandas for efficient data manipulation and ArcGIS for spatial analysis and visualization, revealing critical disparities in job access. This project sharpened my data cleaning, analysis, and geographical information system (GIS) skills.</p>",
+                skills: ['Pandas', 'ArcGIS', 'Data Analysis', 'SQL', 'Python', 'BigQuery'],
+                publications: [],
+                githubLink: 'https://github.com/your-github/census-project', // Placeholder
+                demoLink: ''
+            },
+            {
+                id: 'yolov7-construction',
+                title: 'YOLOv7 for Construction Site Inspection',
+                shortDesc: "Implemented a YOLOv7 segmentation framework for automated fence stability assessment in construction sites.",
+                longDesc: "<p>Developed a computer vision solution for automated construction site inspection by implementing a YOLOv7 segmentation framework. This system was specifically designed for the automated assessment of temporary fence stability, significantly improving safety monitoring efficiency.</p><p>The findings from this research have been published and are currently under review in a reputable engineering journal, demonstrating the practical impact and innovative nature of the work. This project deepened my expertise in object detection, image segmentation, and real-world application of machine learning.</p>",
+                skills: ['YOLOv7', 'Computer Vision', 'Machine Learning', 'TensorFlow', 'PyTorch', 'Python'],
+                publications: [{ text: 'Computer Vision-based Temporary Fence Stability Inspection...', url: 'https://doi.org/10.5703/1288284317590' }],
+                githubLink: 'https://github.com/your-github/yolov7-project', // Placeholder
+                demoLink: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Example YouTube embed
+            },
+            {
+                id: 'alpaca-lora-llm',
+                title: 'Alpaca-LoRA Multi-modal LLM Pipeline',
+                shortDesc: "Implemented a fine-tuned Alpaca-LoRA multi-modal LLM pipeline with prompt engineering for NLP applications.",
+                longDesc: "<p>Successfully implemented a fine-tuned Alpaca-LoRA multi-modal Large Language Model (LLM) pipeline. This involved advanced prompt engineering techniques to optimize the model's performance for various Natural Language Processing (NLP) tasks.</p><p>This ongoing research project aims to push the boundaries of LLM capabilities, with a paper detailing the methodology and results currently in progress. It showcased my proficiency in state-of-the-art LLM architectures and prompt optimization.</p>",
+                skills: ['LLM', 'Alpaca-LoRA', 'Prompt Engineering', 'Natural Language Processing', 'Python', 'PyTorch', 'TensorFlow'],
+                publications: [{ text: 'Multi-modal Large Language Model Development Framework...', url: 'https://doi.org/10.5703/1288284317590' }],
+                githubLink: 'https://github.com/your-github/llm-project', // Placeholder
+                demoLink: ''
+            },
+            {
+                id: 'mysql-asset-management',
+                title: 'Custom MySQL Asset Management Database',
+                shortDesc: "Designed and implemented a custom MySQL asset management database for government property.",
+                longDesc: "<p>As a Social Service Agent, I designed and implemented a bespoke MySQL database system for government property asset management. This project involved replacing an inefficient manual tracking process with a robust, scalable, and user-friendly digital solution.</p><p>The database streamlined inventory, tracking, and reporting for critical government assets, demonstrating my practical skills in database design, SQL querying, and data management in a professional setting.</p>",
+                skills: ['MySQL', 'SQL', 'Database Design', 'Data Management'],
+                publications: [],
+                githubLink: 'https://github.com/your-github/mysql-project', // Placeholder
+                demoLink: ''
+            },
+            {
+                id: 'ev-simulation',
+                title: 'Agent-based Simulation for EV Charging Needs',
+                shortDesc: "Developed an agent-based simulation model using AnyLogic for EV charging needs of 80,000 EVs.",
+                longDesc: "<p>Contributed to an INDOT-funded project by developing an advanced agent-based simulation model using AnyLogic. This model focused on forecasting the electric vehicle (EV) charging needs for a fleet of 80,000 EVs, critical for infrastructure planning.</p><p>The project involved extensive data analysis with Pandas and ArcGIS to feed realistic parameters into the simulation, culminating in a technical report for the Joint Transportation Research Program (JTRP). This project deepened my understanding of complex systems modeling and its application in urban planning.</p>",
+                skills: ['AnyLogic', 'Simulation', 'Data Analysis', 'Pandas', 'ArcGIS', 'R', 'Python'],
+                publications: [{ text: 'A strategic assessment of needs and opportunities for the wider adoption of electric vehicles in Indiana.', url: 'https://doi.org/10.5703/1288284317590' }],
+                githubLink: 'https://github.com/your-github/ev-simulation', // Placeholder
+                demoLink: ''
+            },
+            {
+                id: 'ml-edge-tpus',
+                title: 'ML Image/Object Detection on Google Coral Edge TPUs',
+                shortDesc: "Conducted research on machine learning image and object detection methodologies on Google Coral Edge TPUs.",
+                longDesc: "<p>As a Software Department Summer Intern at Koolsign, I conducted pivotal research into optimizing machine learning models for image and object detection on Google Coral Edge TPUs. This work focused on achieving high performance in resource-constrained environments.</p><p>Key activities included developing and fine-tuning models using TensorFlow and PyTorch, and performing extensive data annotation for specific applications like license plate detection. This internship provided hands-on experience with edge AI deployment and model optimization.</p>",
+                skills: ['Machine Learning', 'Computer Vision', 'TensorFlow', 'PyTorch', 'Google Coral Edge TPUs', 'Python'],
+                publications: [],
+                githubLink: 'https://github.com/your-github/edge-tpu-project', // Placeholder
+                demoLink: ''
+            },
+            {
+                id: 'application-stabilization-testing',
+                title: 'Application Stabilization Testing',
+                shortDesc: "Assisted in testing the stabilization of company applications before publishing updates to ensure reliability.",
+                longDesc: "<p>During my R&D Division Summer Internship at Catenoid, I played a crucial role in Quality Assurance (QA) testing for company applications. My primary responsibility was to assist in stabilizing these applications before publishing updates.</p><p>This involved rigorous testing protocols to ensure reliability, performance, and bug-free operation, contributing directly to the high quality and user satisfaction of the company's software products. I gained valuable experience in application testing methodologies and version control using Git.</p>",
+                skills: ['QA Testing', 'Application Testing', 'Git'],
+                publications: [],
+                githubLink: 'https://github.com/your-github/qa-testing-project', // Placeholder
+                demoLink: ''
+            }
+        ];
+
+        // Grouped Skills Data Structure
+        const skillCategories = [
+            {
+                name: "Machine Learning & AI",
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>`,
+                skills: ['PyTorch', 'TensorFlow', 'Machine Learning', 'Computer Vision', 'YOLOv7', 'CNNs', 'GCNs', 'Unsupervised Learning', 'LLM', 'Alpaca-LoRA', 'Prompt Engineering', 'NLP', 'Google Coral Edge TPUs']
+            },
+            {
+                name: "Data Engineering & Cloud",
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>`,
+                skills: ['AWS', 'Hadoop', 'Spark', 'BigQuery', 'Docker', 'MySQL', 'Database Design', 'Data Management', 'Relational DBMS']
+            },
+            {
+                name: "Languages & Core",
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>`,
+                skills: ['Python', 'Java', 'R', 'SQL', 'O-O Programming', 'Data Structures & Algorithms']
+            },
+            {
+                name: "Analysis & Visualization",
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>`,
+                skills: ['Pandas', 'Data Analysis', 'Data Mining', 'Large Scale Data Analytics', 'Applied Regression Analysis', 'Probability', 'Statistical Theory', 'LiDAR', 'PointCloud', 'ArcGIS', 'AnyLogic', 'Simulation']
+            },
+             {
+                name: "Tools & Methodologies",
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`,
+                skills: ['Git', 'Anaconda', 'QA Testing', 'Application Testing', 'Ethics of Data Science']
+            },
+            {
+                name: "Certifications",
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
+                skills: ['AWS Cloud Practitioner', 'NVIDIA RAPIDS']
+            }
+        ];
+
+        // Function to render project cards
+        function renderProjectCards() {
+            const container = document.getElementById('project-cards-container');
+            container.innerHTML = ''; // Clear existing cards
+            projects.forEach((project, index) => {
+                const card = `
+                    <div class="glass-card p-6 rounded-xl shadow-lg border border-border-color transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer animate-fade-in delay-${index * 100}" onclick="showProjectDetail('${project.id}')">
+                        <h3 class="text-xl font-display font-bold text-white mb-3 hover:text-accent transition-colors duration-300">${project.title}</h3>
+                        <p class="text-text-secondary text-base">${project.shortDesc}</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            ${project.skills.slice(0, 3).map(skill => `<span class="skill-tag-gradient text-xs text-text-primary px-3 py-1 rounded-full border border-border-color">${skill}</span>`).join('')}
+                            ${project.skills.length > 3 ? `<span class="text-xs text-text-secondary px-3 py-1">+${project.skills.length - 3} more</span>` : ''}
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        // Updated Function to render grouped skills
+        function renderSkillsSection() {
+            const container = document.getElementById('skills-list-container');
+            container.innerHTML = '';
+            
+            skillCategories.forEach((category, index) => {
+                const categoryCard = `
+                    <div class="glass-card p-6 rounded-xl border border-border-color hover:border-accent transition-colors duration-300 animate-pop-in delay-${index * 100}">
+                        <div class="flex items-center mb-4 text-accent">
+                            ${category.icon}
+                            <h3 class="ml-3 text-lg font-display font-bold text-white">${category.name}</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            ${category.skills.map(skill => `
+                                <span class="text-xs bg-primary-bg text-text-secondary px-3 py-1 rounded-full border border-border-color hover:text-white hover:border-accent transition-colors duration-300">
+                                    ${skill}
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += categoryCard;
+            });
+        }
+
+        // Function to show/hide pages (SPA behavior)
+        function showPage(pageId) {
+            document.querySelectorAll('.view').forEach(page => {
+                page.classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+            // Scroll to top of the new page, accounting for fixed header
+            if (pageId === 'home-page') {
+                window.scrollTo(0, 0); // For home, let hash change handle specific sections
+            } else {
+                window.scrollTo(0, 0); // For detail pages, just scroll to top
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            const headerOffset = document.getElementById('main-header').offsetHeight;
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset - 20; // Extra padding
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Function to populate and show project detail page
+        function showProjectDetail(projectId) {
+            const project = projects.find(p => p.id === projectId);
+            if (!project) return;
+
+            document.getElementById('project-detail-title').textContent = project.title;
+            document.getElementById('project-detail-long-desc').innerHTML = project.longDesc;
+            document.getElementById('project-detail-skills').textContent = project.skills.join(', ');
+
+            const publicationsContainer = document.getElementById('project-detail-publications');
+            publicationsContainer.innerHTML = '';
+            if (project.publications && project.publications.length > 0) {
+                project.publications.forEach((pub, index) => {
+                    const pubLink = `<a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">${pub.text}</a>`;
+                    publicationsContainer.innerHTML += (index > 0 ? ', ' : '') + pubLink;
+                });
+            } else {
+                publicationsContainer.textContent = 'N/A';
+            }
+
+            const videoContainer = document.getElementById('project-detail-video-container');
+            if (project.demoLink) {
+                videoContainer.innerHTML = `
+                    <iframe src="${project.demoLink}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg"></iframe>
+                `;
+            } else {
+                videoContainer.innerHTML = `
+                    <div class="absolute inset-0 flex items-center justify-center bg-secondary-bg text-text-secondary text-xl font-mono p-4 rounded-lg">
+                        No demo video available for this project.
+                    </div>
+                `;
+            }
+
+            const linksContainer = document.getElementById('project-detail-links');
+            linksContainer.innerHTML = '';
+            if (project.githubLink) {
+                linksContainer.innerHTML += `
+                    <a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-accent text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.821 9.504.475.087.68-.206.68-.458 0-.226-.007-.756-.011-1.249-2.775.602-3.361-1.334-3.361-1.334-.45-1.147-1.096-1.458-1.096-1.458-.9-.614.069-.6.069-.6 1.002.071 1.527 1.034 1.527 1.034.891 1.529 2.341 1.087 2.91.821.091-.637.349-1.087.636-1.338-2.22-.253-4.555-1.113-4.555-4.949 0-1.094.391-1.983 1.029-2.682-.103-.253-.446-1.268.099-2.648 0 0 .84-.27 2.75 1.022A9.607 9.607 0 0112 6.843c.85.004 1.705.115 2.504.337 1.909-1.292 2.747-1.022 2.747-1.022.546 1.38.202 2.395.099 2.648.64.699 1.029 1.588 1.029 2.682 0 3.845-2.339 4.69-4.566 4.933.359.307.678.915.678 1.846 0 1.338-.012 2.419-.012 2.747 0 .254.205.545.688.453C20.147 20.219 23 16.46 23 12.017 23 6.484 18.522 2 13 2h-1z" clip-rule="evenodd"/></svg>
+                        GitHub Repository
+                    </a>
+                `;
+            }
+            if (project.demoLink && project.demoLink.includes('youtube.com')) { // Only show "Live Demo" if it's a YouTube link
+                 linksContainer.innerHTML += `
+                    <a href="${project.demoLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-purple-700 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 8.3c-.2-.6-.7-1-1.3-1.2-.7-.2-3.7-.6-9.2-.6-5.5 0-8.5.4-9.2.6-.6.2-1.1.6-1.3 1.2-.2.7-.2 2.9-.2 4.7 0 1.8 0 4 .2 4.7.2.6.7 1 1.3 1.2.7.2 3.7.6 9.2.6 5.5 0 8.5-.4 9.2-.6.6-.2 1.1-.6 1.3-1.2.2-.7.2-2.9.2-4.7s0-4-.2-4.7zM9.5 15.5V8.5L16 12l-6.5 3.5z"/></svg>
+                        Watch Demo
+                    </a>
+                `;
+            }
+
+            showPage('project-detail-page');
+            history.pushState(null, '', `#project/${projectId}`);
+        }
+
+        // Handle hash changes for direct linking/navigation
+        function handleHashChange() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#project/')) {
+                const projectId = hash.substring(hash.indexOf('/') + 1);
+                showProjectDetail(projectId);
+            } else if (hash.startsWith('#about')) {
+                 showPage('home-page');
+                 scrollToSection('hero');
+            } else if (hash.startsWith('#projects')) {
+                 showPage('home-page');
+                 scrollToSection('projects-section');
+            } else if (hash.startsWith('#skills')) {
+                 showPage('home-page');
+                 scrollToSection('skills-section');
+            } else if (hash.startsWith('#interests')) {
+                 showPage('home-page');
+                 scrollToSection('interests-section');
+            } else {
+                showPage('home-page');
+                scrollToSection('hero'); // Default to top of home page
+            }
+        }
+
+        // Mobile menu toggle
+        const menuButton = document.getElementById('menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+        }
+
+        menuButton.addEventListener('click', toggleMobileMenu);
+        closeMenuButton.addEventListener('click', toggleMobileMenu);
+
+
+        // Initial page load and event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjectCards();
+            renderSkillsSection();
+            handleHashChange(); // Check hash on load
+        });
+
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
+</body>
+</html>
