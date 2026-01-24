@@ -286,10 +286,10 @@
                                 <h2 class="text-2xl font-display font-bold text-gradient mb-6">Bridging Raw Data & Actionable Insights</h2>
                                 <div class="space-y-4 text-text-primary text-lg leading-relaxed">
                                     <p>
-                                        I am a Data Science student specializing in <strong>Machine Learning</strong>, <strong>Computer Vision</strong>, and <strong>Large Scale Analytics</strong>. My goal is to transform complex datasets into clear, strategic decisions.
+                                        I am a Data Science student specializing in <strong>Data Analysis</strong>, <strong>Database Management</strong>, <strong>Computer Vision</strong>, </strong> and <strong>Large Scale Analytics</strong>. My goal is to transform complex datasets into clear, strategic decisions.
                                     </p>
                                     <p>
-                                        Currently, I'm a Research Assistant at the <strong>SIMPLE Lab</strong>, working on LiDAR processing and LLM pipelines. When I'm not coding, you can find me on the baseball field or behind a camera lens, finding the signal in the noise.
+                                        Currently, I'm a Research Assistant at the <strong>SIMPLE Lab</strong>. When I'm not coding, you can find me on the diamond playing baseball or behind a camera lens, capturing my favorite moments.
                                     </p>
                                 </div>
                                 
@@ -335,7 +335,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         <div class="space-y-6">
                             <h3 class="text-2xl font-display font-bold text-accent flex items-center animate-slide-in-left">
-                                <span class="mr-3 animate-float" style="animation-delay: 0.2s;">⚾</span> Strategic Focus
+                                <span class="mr-3 animate-float" style="animation-delay: 0.2s;">⚾</span> Leadership on the field
                             </h3>
                             <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
                                 <div class="aspect-video bg-gray-700 rounded-lg mb-4 overflow-hidden relative">
@@ -352,22 +352,24 @@
                             <h3 class="text-2xl font-display font-bold text-accent flex items-center animate-slide-in-right">
                                 <span class="mr-3 animate-float" style="animation-delay: 0.4s;">📷</span> Photography
                             </h3>
-                            <p class="text-text-primary leading-relaxed">
-                                My photography journey spans both film and digital mediums. Whether capturing street scenes or landscapes, I focus on composition and lighting to find the signal in the noise. It teaches me to look at the world from different angles—a skill that is invaluable in data science.
-                            </p>
-                            
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
-                                    <img src="https://i.postimg.cc/fJByTkyn/000015340004250511-(1).jpg" alt="Photography 1" class="w-full h-full object-cover rounded">
-                                </div>
-                                <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
-                                    <img src="https://i.postimg.cc/1fJX54X3/000055690023250509.jpg" alt="Photography 2" class="w-full h-full object-cover rounded">
-                                </div>
-                                <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
-                                    <img src="https://i.postimg.cc/HVBnsjnL/000055690029250509.jpg" alt="Photography 3" class="w-full h-full object-cover rounded">
-                                </div>
-                                <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
-                                    <img src="https://i.postimg.cc/MvdHKXHK/000209490016250616.jpg" alt="Photography 4" class="w-full h-full object-cover rounded">
+                            <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+                                <p class="text-text-secondary leading-relaxed mb-5">
+                                    I shoot both film and digital, mostly focusing on street scenes and everyday moments. I like clean framing, natural light, and letting details carry the image without over-editing.
+                                </p>
+                                
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
+                                        <img src="https://i.postimg.cc/fJByTkyn/000015340004250511-(1).jpg" alt="Photography 1" class="w-full h-full object-cover rounded">
+                                    </div>
+                                    <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
+                                        <img src="https://i.postimg.cc/1fJX54X3/000055690023250509.jpg" alt="Photography 2" class="w-full h-full object-cover rounded">
+                                    </div>
+                                    <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
+                                        <img src="https://i.postimg.cc/HVBnsjnL/000055690029250509.jpg" alt="Photography 3" class="w-full h-full object-cover rounded">
+                                    </div>
+                                    <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
+                                        <img src="https://i.postimg.cc/MvdHKXHK/000209490016250616.jpg" alt="Photography 4" class="w-full h-full object-cover rounded">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -444,6 +446,7 @@
                         <h3 class="text-2xl font-display font-semibold text-accent">Project Details</h3>
                         <ul id="project-detail-meta" class="list-none space-y-3 text-lg text-text-secondary">
                             <li><strong>Skills Used:</strong> <span id="project-detail-skills" class="text-text-primary"></span></li>
+                            <li><strong>Paper Status:</strong> <span id="project-detail-paper-status" class="text-text-primary"></span></li>
                             <li><strong>Publication:</strong> <span id="project-detail-publications" class="text-text-primary"></span></li>
                         </ul>
                     </div>
@@ -468,24 +471,16 @@
         const profilePicUrl = 'https://i.postimg.cc/6QXHBbZD/1757079336373.jpg';
         const projects = [
             {
-                id: 'lidar-point-cloud',
-                title: 'LiDAR Point Cloud Processing & Segmentation',
-                shortDesc: "Explored large-scale LiDAR point cloud data using unsupervised learning, CNNs, and GCNs for advanced analysis.",
-                longDesc: "<p>Conducted extensive research at SIMPLE Lab, Purdue University, focusing on the processing and segmentation of large-scale LiDAR point cloud data. This involved applying advanced unsupervised learning techniques, Convolutional Neural Networks (CNNs), and Graph Convolutional Networks (GCNs) to extract meaningful insights and create robust segmentation models.</p><p>Collaborated with a team of 10 lab members, contributing to weekly research seminars and presenting findings to peers and faculty. This project enhanced my skills in 3D data processing, machine learning model development, and collaborative research environments.</p>",
-                skills: ['LiDAR', 'Unsupervised Learning', 'CNNs', 'GCNs', 'Python', 'PointCloud'],
-                publications: [],
-                githubLink: 'https://github.com/your-github/lidar-project', // Placeholder
-                demoLink: ''
-            },
-            {
-                id: 'census-data-analysis',
-                title: 'Census Data Analysis for Job Inequality',
-                shortDesc: "Processed large-scale census data from 6229 Block Groups in Chicago, IL to analyze job accessibility and inequality.",
-                longDesc: "<p>Undertook a comprehensive analysis of large-scale census data covering 6229 Block Groups in Chicago, IL. The primary objective was to investigate job inequality by evaluating public transport accessibility and median wages across different demographic areas.</p><p>Utilized Pandas for efficient data manipulation and ArcGIS for spatial analysis and visualization, revealing critical disparities in job access. This project sharpened my data cleaning, analysis, and geographical information system (GIS) skills.</p>",
-                skills: ['Pandas', 'ArcGIS', 'Data Analysis', 'SQL', 'Python', 'BigQuery'],
-                publications: [],
-                githubLink: 'https://github.com/your-github/census-project', // Placeholder
-                demoLink: ''
+                id: 'ev-simulation',
+                title: 'Agent-based Simulation for EV Charging Needs',
+                shortDesc: "Built an agent-based simulation to forecast EV charging demand for 80,000 EVs as part of a $100M INDOT-funded initiative.",
+                longDesc: "<p>Contributed to a major <strong>$100M INDOT-funded</strong> initiative by developing an agent-based simulation model (AnyLogic) to forecast electric vehicle (EV) charging needs for a projected fleet of <strong>80,000 EVs</strong>. The work supports infrastructure planning and policy decisions at statewide scale.</p><p>Processed and analyzed supporting datasets using Pandas and ArcGIS to create realistic model inputs and validate scenarios. Findings were compiled into a technical report and associated publication for the Joint Transportation Research Program (JTRP).</p>",
+                skills: ['AnyLogic', 'Simulation', 'Data Analysis', 'Pandas', 'ArcGIS', 'R', 'Python'],
+                publications: [{ text: 'A strategic assessment of needs and opportunities for the wider adoption of electric vehicles in Indiana.', url: 'https://doi.org/10.5703/1288284317590' }],
+                paperStatus: 'published',
+                githubLink: '',
+                demoLink: '',
+                thumbnail: 'simulation'
             },
             {
                 id: 'yolov7-construction',
@@ -494,8 +489,10 @@
                 longDesc: "<p>Developed a computer vision solution for automated construction site inspection by implementing a YOLOv7 segmentation framework. This system was specifically designed for the automated assessment of temporary fence stability, significantly improving safety monitoring efficiency.</p><p>The findings from this research have been published and are currently under review in a reputable engineering journal, demonstrating the practical impact and innovative nature of the work. This project deepened my expertise in object detection, image segmentation, and real-world application of machine learning.</p>",
                 skills: ['YOLOv7', 'Computer Vision', 'Machine Learning', 'TensorFlow', 'PyTorch', 'Python'],
                 publications: [{ text: 'Computer Vision-based Temporary Fence Stability Inspection...', url: 'https://doi.org/10.5703/1288284317590' }],
-                githubLink: 'https://github.com/your-github/yolov7-project', // Placeholder
-                demoLink: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Example YouTube embed
+                paperStatus: 'published',
+                githubLink: '',
+                demoLink: 'https://drive.google.com/file/d/1KL3wzmhyhwgrOYa8fxnS95g30o0s6ut9/preview',
+                thumbnail: 'vision'
             },
             {
                 id: 'alpaca-lora-llm',
@@ -504,49 +501,48 @@
                 longDesc: "<p>Successfully implemented a fine-tuned Alpaca-LoRA multi-modal Large Language Model (LLM) pipeline. This involved advanced prompt engineering techniques to optimize the model's performance for various Natural Language Processing (NLP) tasks.</p><p>This ongoing research project aims to push the boundaries of LLM capabilities, with a paper detailing the methodology and results currently in progress. It showcased my proficiency in state-of-the-art LLM architectures and prompt optimization.</p>",
                 skills: ['LLM', 'Alpaca-LoRA', 'Prompt Engineering', 'Natural Language Processing', 'Python', 'PyTorch', 'TensorFlow'],
                 publications: [{ text: 'Multi-modal Large Language Model Development Framework...', url: 'https://doi.org/10.5703/1288284317590' }],
-                githubLink: 'https://github.com/your-github/llm-project', // Placeholder
-                demoLink: ''
+                paperStatus: 'under_review',
+                githubLink: '',
+                demoLink: 'https://drive.google.com/file/d/1iz4KYjoh2nPTa7ObyRt3cDOf_VfzmE91/preview',
+                thumbnail: 'ai'
             },
             {
-                id: 'mysql-asset-management',
-                title: 'Custom MySQL Asset Management Database',
-                shortDesc: "Designed and implemented a custom MySQL asset management database for government property.",
-                longDesc: "<p>As a Social Service Agent, I designed and implemented a bespoke MySQL database system for government property asset management. This project involved replacing an inefficient manual tracking process with a robust, scalable, and user-friendly digital solution.</p><p>The database streamlined inventory, tracking, and reporting for critical government assets, demonstrating my practical skills in database design, SQL querying, and data management in a professional setting.</p>",
-                skills: ['MySQL', 'SQL', 'Database Design', 'Data Management'],
+                id: 'baseball-stats-platform',
+                title: 'Baseball Team Statistics Platform (DB + Web App)',
+                shortDesc: "Built a relational database-backed web app to manage team stats and automate calculations for players and coaches.",
+                longDesc: "<p>Designed and built a baseball statistics management platform backed by a <strong>relational database</strong>, enabling streamlined stat entry, tracking, and calculation workflows for a team environment.</p><p>Deployed as a web application for convenient access from any device: <a href=\"https://statcalculator.onrender.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-accent hover:underline\">statcalculator.onrender.com</a>.</p><div class=\"mt-6\"><img src=\"https://i.postimg.cc/6649FTBQ/defaultdb.png\" alt=\"Relational database schema\" class=\"w-full rounded-lg border border-border-color\" /></div>",
+                skills: ['Relational Database', 'SQL', 'Web Development', 'Data Modeling'],
                 publications: [],
-                githubLink: 'https://github.com/your-github/mysql-project', // Placeholder
-                demoLink: ''
+                paperStatus: '',
+                githubLink: '',
+                liveLink: 'https://statcalculator.onrender.com/',
+                demoLink: '',
+                thumbnail: 'baseball'
             },
             {
-                id: 'ev-simulation',
-                title: 'Agent-based Simulation for EV Charging Needs',
-                shortDesc: "Developed an agent-based simulation model using AnyLogic for EV charging needs of 80,000 EVs.",
-                longDesc: "<p>Contributed to an INDOT-funded project by developing an advanced agent-based simulation model using AnyLogic. This model focused on forecasting the electric vehicle (EV) charging needs for a fleet of 80,000 EVs, critical for infrastructure planning.</p><p>The project involved extensive data analysis with Pandas and ArcGIS to feed realistic parameters into the simulation, culminating in a technical report for the Joint Transportation Research Program (JTRP). This project deepened my understanding of complex systems modeling and its application in urban planning.</p>",
-                skills: ['AnyLogic', 'Simulation', 'Data Analysis', 'Pandas', 'ArcGIS', 'R', 'Python'],
-                publications: [{ text: 'A strategic assessment of needs and opportunities for the wider adoption of electric vehicles in Indiana.', url: 'https://doi.org/10.5703/1288284317590' }],
-                githubLink: 'https://github.com/your-github/ev-simulation', // Placeholder
-                demoLink: ''
-            },
-            {
-                id: 'ml-edge-tpus',
-                title: 'ML Image/Object Detection on Google Coral Edge TPUs',
-                shortDesc: "Conducted research on machine learning image and object detection methodologies on Google Coral Edge TPUs.",
-                longDesc: "<p>As a Software Department Summer Intern at Koolsign, I conducted pivotal research into optimizing machine learning models for image and object detection on Google Coral Edge TPUs. This work focused on achieving high performance in resource-constrained environments.</p><p>Key activities included developing and fine-tuning models using TensorFlow and PyTorch, and performing extensive data annotation for specific applications like license plate detection. This internship provided hands-on experience with edge AI deployment and model optimization.</p>",
-                skills: ['Machine Learning', 'Computer Vision', 'TensorFlow', 'PyTorch', 'Google Coral Edge TPUs', 'Python'],
+                id: 'boilermart',
+                title: 'BoilerMart - E-Commerce Web Application',
+                shortDesc: "Developed a full-stack e-commerce web application for campus marketplace with user authentication and real-time features.",
+                longDesc: "<p>Created BoilerMart, a comprehensive e-commerce web application designed as a campus marketplace platform. The project features full-stack development with user authentication, product listings, shopping cart functionality, and real-time updates.</p><p>Built with modern web technologies, this application demonstrates proficiency in both frontend and backend development, database management, and creating intuitive user experiences for online marketplace platforms.</p>",
+                skills: ['Web Development', 'Full-Stack', 'JavaScript', 'Node.js', 'Database', 'React'],
                 publications: [],
-                githubLink: 'https://github.com/your-github/edge-tpu-project', // Placeholder
-                demoLink: ''
+                paperStatus: '',
+                githubLink: 'https://github.com/tkim2000/Boilermart2',
+                demoLink: 'https://drive.google.com/file/d/15_pEQlrQdiYNPC7v4ODixIpki49B-BoH/preview',
+                thumbnail: 'web'
             },
             {
-                id: 'application-stabilization-testing',
-                title: 'Application Stabilization Testing',
-                shortDesc: "Assisted in testing the stabilization of company applications before publishing updates to ensure reliability.",
-                longDesc: "<p>During my R&D Division Summer Internship at Catenoid, I played a crucial role in Quality Assurance (QA) testing for company applications. My primary responsibility was to assist in stabilizing these applications before publishing updates.</p><p>This involved rigorous testing protocols to ensure reliability, performance, and bug-free operation, contributing directly to the high quality and user satisfaction of the company's software products. I gained valuable experience in application testing methodologies and version control using Git.</p>",
-                skills: ['QA Testing', 'Application Testing', 'Git'],
+                id: 'census-data-analysis',
+                title: 'Census Data Analysis for Job Inequality',
+                shortDesc: "Processed large-scale census data from 6229 Block Groups in Chicago, IL to analyze job accessibility and inequality.",
+                longDesc: "<p>Undertook a comprehensive analysis of large-scale census data covering 6229 Block Groups in Chicago, IL. The primary objective was to investigate job inequality by evaluating public transport accessibility and median wages across different demographic areas.</p><p>Utilized Pandas for efficient data manipulation and ArcGIS for spatial analysis and visualization, revealing critical disparities in job access. This project sharpened my data cleaning, analysis, and geographical information system (GIS) skills.</p>",
+                skills: ['Pandas', 'ArcGIS', 'Data Analysis', 'SQL', 'Python', 'BigQuery'],
                 publications: [],
-                githubLink: 'https://github.com/your-github/qa-testing-project', // Placeholder
-                demoLink: ''
-            }
+                paperStatus: '',
+                githubLink: '',
+                demoLink: '',
+                thumbnail: 'data'
+            },
         ];
 
         // Grouped Skills Data Structure
@@ -583,18 +579,38 @@
             }
         ];
 
+        // Function to get thumbnail icon based on project type
+        function getThumbnailIcon(type) {
+            const icons = {
+                'vision': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>',
+                'ai': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>',
+                'web': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>',
+                'data': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>',
+                'simulation': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>',
+                'baseball': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 6.5c1.8 1.2 3 3.2 3 5.5 0 1.6-.6 3.1-1.6 4.2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 6.5c-1.8 1.2-3 3.2-3 5.5 0 1.6.6 3.1 1.6 4.2"></path></svg>'
+            };
+            return icons[type] || '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>';
+        }
+
         // Function to render project cards
         function renderProjectCards() {
             const container = document.getElementById('project-cards-container');
             container.innerHTML = ''; // Clear existing cards
             projects.forEach((project, index) => {
+                const thumbnailIcon = getThumbnailIcon(project.thumbnail);
+                const paperBadge = project.paperStatus === 'published'
+                    ? `<span class="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 border border-emerald-400/30">Published</span>`
+                    : project.paperStatus === 'under_review'
+                        ? `<span class="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/20 text-amber-200 border border-amber-400/30">Under Review</span>`
+                        : '';
                 const card = `
                     <div class="project-card p-6 rounded-xl shadow-lg cursor-pointer animate-fade-in delay-${index * 100}" onclick="showProjectDetail('${project.id}')" style="animation-delay: ${index * 0.1}s;">
                         <div class="relative mb-4">
                             <div class="absolute -inset-1 bg-gradient-to-r from-accent/20 to-accent-secondary/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
                             <div class="relative h-32 bg-gradient-to-br from-secondary-bg/50 to-accent/10 rounded-lg flex items-center justify-center">
-                                <svg class="w-12 h-12 text-accent/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                ${thumbnailIcon}
                             </div>
+                            ${paperBadge}
                         </div>
                         <h3 class="text-xl font-display font-bold text-white mb-3 group-hover:text-gradient transition-colors duration-300">${project.title}</h3>
                         <p class="text-text-secondary text-base mb-4 line-clamp-3">${project.shortDesc}</p>
@@ -671,6 +687,17 @@
             document.getElementById('project-detail-long-desc').innerHTML = project.longDesc;
             document.getElementById('project-detail-skills').textContent = project.skills.join(', ');
 
+            const paperStatusContainer = document.getElementById('project-detail-paper-status');
+            if (paperStatusContainer) {
+                if (project.paperStatus === 'published') {
+                    paperStatusContainer.innerHTML = '<span class="inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 border border-emerald-400/30">Published</span>';
+                } else if (project.paperStatus === 'under_review') {
+                    paperStatusContainer.innerHTML = '<span class="inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/20 text-amber-200 border border-amber-400/30">Under Review</span>';
+                } else {
+                    paperStatusContainer.innerHTML = 'N/A';
+                }
+            }
+
             const publicationsContainer = document.getElementById('project-detail-publications');
             publicationsContainer.innerHTML = '';
             if (project.publications && project.publications.length > 0) {
@@ -697,6 +724,14 @@
 
             const linksContainer = document.getElementById('project-detail-links');
             linksContainer.innerHTML = '';
+            if (project.liveLink) {
+                linksContainer.innerHTML += `
+                    <a href="${project.liveLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-purple-700 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Live Site
+                    </a>
+                `;
+            }
             if (project.githubLink) {
                 linksContainer.innerHTML += `
                     <a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-accent text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md">
