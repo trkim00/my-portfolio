@@ -534,13 +534,17 @@
             {
                 id: 'census-data-analysis',
                 title: 'Census Data Analysis for Job Inequality',
-                shortDesc: "Processed large-scale census data from 6229 Block Groups in Chicago, IL to analyze job accessibility and inequality.",
-                longDesc: "<p>Undertook a comprehensive analysis of large-scale census data covering 6229 Block Groups in Chicago, IL. The primary objective was to investigate job inequality by evaluating public transport accessibility and median wages across different demographic areas.</p><p>Utilized Pandas for efficient data manipulation and ArcGIS for spatial analysis and visualization, revealing critical disparities in job access. This project sharpened my data cleaning, analysis, and geographical information system (GIS) skills.</p>",
-                skills: ['Pandas', 'ArcGIS', 'Data Analysis', 'SQL', 'Python', 'BigQuery'],
+                shortDesc: "Computed Transit Poverty (FGT) values to identify which census block groups are struggling due to limited transit access.",
+                longDesc: "<p>Built a reproducible pipeline to quantify <strong>transit poverty</strong> at the census block-group level using the Foster-Greer-Thorbecke (FGT) framework.</p><p>I integrated Census block-group data with transit accessibility and poverty inputs, then generated mode-specific and combined results (bus/rail/bike) to highlight which neighborhoods are struggling the most.</p><p>Outputs are exported as CSV tables suitable for mapping/visualization (see the <code>fgt_values</code> folder) along with summary figures.</p>",
+                skills: ['Python', 'Pandas', 'Jupyter Notebook', 'Data Cleaning', 'Spatial Analysis', 'GIS'],
                 publications: [],
                 paperStatus: '',
-                githubLink: '',
+                githubLink: 'https://github.com/tkim2000/transit_census_data_analysis',
                 demoLink: '',
+                demoImages: [
+                    'https://i.postimg.cc/Jh6GRgy5/Picture1.png',
+                    'https://i.postimg.cc/8zwCb3mm/Picture2.png'
+                ],
                 thumbnail: 'data'
             },
         ];
@@ -570,7 +574,7 @@
              {
                 name: "Tools & Methodologies",
                 icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`,
-                skills: ['Git', 'Anaconda', 'QA Testing', 'Application Testing', 'Ethics of Data Science']
+                skills: ['Git', 'Anaconda', 'QA Testing', 'Application Testing']
             },
             {
                 name: "Certifications",
@@ -710,11 +714,24 @@
             }
 
             const videoContainer = document.getElementById('project-detail-video-container');
-            if (project.demoLink) {
+            if (project.demoImages && project.demoImages.length > 0) {
+                videoContainer.classList.remove('aspect-video');
+                videoContainer.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-secondary-bg rounded-lg">
+                        ${project.demoImages.map((src, idx) => `
+                            <a href="${src}" target="_blank" rel="noopener noreferrer" class="block">
+                                <img src="${src}" alt="Project visual ${idx + 1}" class="w-full h-auto rounded-lg border border-border-color" loading="lazy" />
+                            </a>
+                        `).join('')}
+                    </div>
+                `;
+            } else if (project.demoLink) {
+                videoContainer.classList.add('aspect-video');
                 videoContainer.innerHTML = `
                     <iframe src="${project.demoLink}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full rounded-lg"></iframe>
                 `;
             } else {
+                videoContainer.classList.add('aspect-video');
                 videoContainer.innerHTML = `
                     <div class="absolute inset-0 flex items-center justify-center bg-secondary-bg text-text-secondary text-xl font-mono p-4 rounded-lg">
                         No demo video available for this project.
