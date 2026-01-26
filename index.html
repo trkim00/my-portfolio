@@ -208,7 +208,7 @@
                 <div id="profile-picture-header" class="hidden md:block">
                     <img src='https://i.postimg.cc/6QXHBbZD/1757079336373.jpg' alt='Tae Rim Kim Profile' class="w-12 h-12 rounded-full border-2 border-accent object-cover animate-pop-in"/>
                 </div>
-                <h1 class="text-2xl font-display font-bold text-gradient animate-slide-in-left">
+                <h1 class="text-xl sm:text-2xl font-display font-bold text-gradient animate-slide-in-left">
                     <a href="#home" onclick="showPage('home-page'); scrollToSection('hero');">Tae Rim Kim</a>
                 </h1>
             </div>
@@ -218,25 +218,27 @@
                 <a href="#skills" onclick="showPage('home-page'); scrollToSection('skills-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Skills</a>
                 <a href="#interests" onclick="showPage('home-page'); scrollToSection('interests-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Interests</a>
                 <a href="#resume" onclick="showPage('home-page'); scrollToSection('resume-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Resume</a>
+                <a href="#contact" onclick="showPage('home-page'); scrollToSection('contact-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Contact</a>
                 <a href="https://linkedin.com/in/TrKim" target="_blank" rel="noopener noreferrer" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium flex items-center hover:scale-105 transform">
                     LinkedIn
                     <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2zM8 11v7h3v-7H8zm1.5-3.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18 17.5c0-4.5-3.5-4.2-3.5-4.2V11h-3v7h3v-3.8c0-1.5 1-1.3 1-1.3s1 0 1 1.3V18h3v-6.5c0-2.3-1.5-3.5-3.5-3.5z"/></svg>
                 </a>
             </nav>
             <button id="menu-button" class="md:hidden text-text-primary hover:text-gradient focus:outline-none z-50 transition-colors duration-300">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="fixed inset-0 bg-primary-bg/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center space-y-8 text-2xl font-display font-medium border-l border-r border-accent/20">
+        <div id="mobile-menu" class="fixed inset-0 bg-primary-bg/95 backdrop-blur-lg z-40 hidden flex flex-col items-center justify-center space-y-8 text-2xl font-display font-medium border-l border-r border-accent/20">
             <button id="close-menu-button" class="absolute top-6 right-6 text-text-primary hover:text-gradient focus:outline-none transition-colors duration-300">
-                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
-            <a href="#about" onclick="showPage('home-page'); scrollToSection('hero'); toggleMobileMenu();" class="text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-110">About Me</a>
-            <a href="#projects" onclick="showPage('home-page'); scrollToSection('projects-section'); toggleMobileMenu();" class="text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-110">Projects</a>
-            <a href="#skills" onclick="showPage('home-page'); scrollToSection('skills-section'); toggleMobileMenu();" class="text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-110">Skills</a>
-            <a href="#interests" onclick="showPage('home-page'); scrollToSection('interests-section'); toggleMobileMenu();" class="text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-110">Interests</a>
-            <a href="#resume" onclick="showPage('home-page'); scrollToSection('resume-section'); toggleMobileMenu();" class="text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-110">Resume</a>
-            <a href="https://linkedin.com/in/TrKim" target="_blank" rel="noopener noreferrer" class="text-text-primary hover:text-gradient transition-all duration-300 flex items-center transform hover:scale-110">
+            <a href="#about" onclick="showPage('home-page'); scrollToSection('hero'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">About Me</a>
+            <a href="#projects" onclick="showPage('home-page'); scrollToSection('projects-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Projects</a>
+            <a href="#skills" onclick="showPage('home-page'); scrollToSection('skills-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Skills</a>
+            <a href="#interests" onclick="showPage('home-page'); scrollToSection('interests-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Interests</a>
+            <a href="#resume" onclick="showPage('home-page'); scrollToSection('resume-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Resume</a>
+            <a href="#contact" onclick="showPage('home-page'); scrollToSection('contact-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Contact</a>
+            <a href="https://linkedin.com/in/TrKim" target="_blank" rel="noopener noreferrer" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 flex items-center transform hover:scale-105">
                 LinkedIn
                 <svg class="ml-2 w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2zM8 11v7h3v-7H8zm1.5-3.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18 17.5c0-4.5-3.5-4.2-3.5-4.2V11h-3v7h3v-3.8c0-1.5 1-1.3 1-1.3s1 0 1 1.3V18h3v-6.5c0-2.3-1.5-3.5-3.5-3.5z"/></svg>
             </a>
@@ -260,7 +262,8 @@
                             <h1 class="text-4xl md:text-5xl font-display font-extrabold text-gradient mb-2 animate-slide-in-left">
                                 Tae Rim Kim
                             </h1>
-                            <p class="text-xl text-accent font-medium mb-6 animate-slide-in-left" style="animation-delay: 0.2s;">Data Science Student @ Purdue</p>
+                            <p class="text-xl text-accent font-medium mb-4 animate-slide-in-left" style="animation-delay: 0.2s;">Data Scientist, Data Analyst, Data Engineer, Software Engineer</p>
+                            <p class="text-sm md:text-base text-text-secondary mb-6 animate-slide-in-left" style="animation-delay: 0.25s;">Bachelor of Science in Data Science • Purdue University • May 2026</p>
                             
                             <div class="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-text-secondary animate-slide-in-left" style="animation-delay: 0.4s;">
                                 <div class="flex items-center bg-secondary-bg/50 px-2.5 py-1.5 rounded-full border border-border-color/50 backdrop-blur-sm hover:bg-secondary-bg/70 hover:border-accent/50 transition-all duration-300 group text-xs">
@@ -286,20 +289,20 @@
                                 <h2 class="text-2xl font-display font-bold text-gradient mb-6">Bridging Raw Data & Actionable Insights</h2>
                                 <div class="space-y-4 text-text-primary text-lg leading-relaxed">
                                     <p>
-                                        I am a Data Science student specializing in <strong>Data Analysis</strong>, <strong>Database Management</strong>, <strong>Computer Vision</strong>, </strong> and <strong>Large Scale Analytics</strong>. My goal is to transform complex datasets into clear, strategic decisions.
+                                        I am a Data Scientist specializing in <strong>Data Analysis</strong>, <strong>Database Management</strong>, <strong>Computer Vision</strong>, </strong> and <strong>Large Scale Analytics</strong>. My goal is to transform complex datasets into clear, strategic decisions.
                                     </p>
                                     <p>
-                                        Currently, I'm a Research Assistant at the <strong>SIMPLE Lab</strong>. When I'm not coding, you can find me on the diamond playing baseball or behind a camera lens, capturing my favorite moments.
+                                        Currently, I'm a Research Assistant at the <strong>Purdue SIMPLE Lab</strong>. When I'm not coding, you can find me on the diamond playing baseball or behind a camera lens, capturing my favorite moments.
                                     </p>
                                 </div>
                                 
                                 <div class="mt-8 flex flex-wrap gap-4">
                                     <a href="#projects" onclick="scrollToSection('projects-section')" class="px-6 py-3 bg-gradient-to-r from-accent to-accent-secondary text-white font-semibold rounded-lg hover:from-accent-secondary hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-glow flex items-center group">
                                         View Projects
-                                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
                                     </a>
-                                    <a href="#skills" onclick="scrollToSection('skills-section')" class="px-6 py-3 bg-transparent border border-accent/50 text-text-primary font-medium rounded-lg hover:bg-accent/10 hover:border-accent transition-all duration-300 hover:scale-105">
-                                        Check Skills
+                                    <a href="#contact" onclick="scrollToSection('contact-section')" class="px-6 py-3 bg-transparent border border-accent/50 text-text-primary font-medium rounded-lg hover:bg-accent/10 hover:border-accent transition-all duration-300 hover:scale-105">
+                                        Contact Me
                                     </a>
                                 </div>
                             </div>
@@ -339,11 +342,13 @@
                             </h3>
                             <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
                                 <div class="aspect-video bg-gray-700 rounded-lg mb-4 overflow-hidden relative">
-                                    <img src="https://i.postimg.cc/BZBJ3R1Y/IMG_4588.jpg" alt="Baseball Pitching" class="w-full h-full object-cover object-bottom transition-transform duration-500 group-hover:scale-110">
+                                    <button type="button" class="block w-full h-full" onclick="openLightbox(['https://i.postimg.cc/BZBJ3R1Y/IMG_4588.jpg','https://i.postimg.cc/zGk57LKS/DSC01696.jpg'], window.LEADERSHIP_CAROUSEL_INDEX || 0)">
+                                        <img id="leadership-carousel-image" src="https://i.postimg.cc/BZBJ3R1Y/IMG_4588.jpg" alt="Leadership on the field" class="w-full h-full object-cover object-bottom transition-transform duration-200 group-hover:scale-110 cursor-zoom-in">
+                                    </button>
                                 </div>
                                 <h4 class="text-xl font-bold text-white mb-2">Pitcher & Third Baseman</h4>
                                 <p class="text-text-secondary leading-relaxed">
-                                    I thrive on the strategic challenges of baseball. Pitching requires controlling the game's pace and analyzing opponent weaknesses, while playing third base demands instant reaction to hard-hit balls. I bring this same discipline, focus, and analytical mindset to every data project I tackle.
+                                            Leading KOREBAPS, a 30-member cultural athletic organization for a year, honed my ability to manage teams and foster community. This experience strengthened my leadership, time management, and communication skills. On the field, I bring intensity to every pitch, combining athletic drive with an analytical approach to the unique dynamics of every game. 
                                 </p>
                             </div>
                         </div>
@@ -359,16 +364,24 @@
                                 
                                 <div class="grid grid-cols-2 gap-4">
                                     <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
-                                        <img src="https://i.postimg.cc/fJByTkyn/000015340004250511-(1).jpg" alt="Photography 1" class="w-full h-full object-cover rounded">
+                                        <button type="button" class="block w-full h-full" onclick="openLightbox(['https://i.postimg.cc/CSRsFGPj/000015340004250511-(1).jpg','https://i.postimg.cc/dVKy6yKr/000055690023250509.jpg','https://i.postimg.cc/0yqwnwq7/000055690029250509.jpg','https://i.postimg.cc/kgdbsbd8/000209490016250616.jpg'], 0)">
+                                            <img src="https://i.postimg.cc/CSRsFGPj/000015340004250511-(1).jpg" alt="Photography 1" class="w-full h-full object-cover rounded cursor-zoom-in">
+                                        </button>
                                     </div>
                                     <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
-                                        <img src="https://i.postimg.cc/1fJX54X3/000055690023250509.jpg" alt="Photography 2" class="w-full h-full object-cover rounded">
+                                        <button type="button" class="block w-full h-full" onclick="openLightbox(['https://i.postimg.cc/CSRsFGPj/000015340004250511-(1).jpg','https://i.postimg.cc/dVKy6yKr/000055690023250509.jpg','https://i.postimg.cc/0yqwnwq7/000055690029250509.jpg','https://i.postimg.cc/kgdbsbd8/000209490016250616.jpg'], 1)">
+                                            <img src="https://i.postimg.cc/dVKy6yKr/000055690023250509.jpg" alt="Photography 2" class="w-full h-full object-cover rounded cursor-zoom-in">
+                                        </button>
                                     </div>
                                     <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
-                                        <img src="https://i.postimg.cc/HVBnsjnL/000055690029250509.jpg" alt="Photography 3" class="w-full h-full object-cover rounded">
+                                        <button type="button" class="block w-full h-full" onclick="openLightbox(['https://i.postimg.cc/CSRsFGPj/000015340004250511-(1).jpg','https://i.postimg.cc/dVKy6yKr/000055690023250509.jpg','https://i.postimg.cc/0yqwnwq7/000055690029250509.jpg','https://i.postimg.cc/kgdbsbd8/000209490016250616.jpg'], 2)">
+                                            <img src="https://i.postimg.cc/0yqwnwq7/000055690029250509.jpg" alt="Photography 3" class="w-full h-full object-cover rounded cursor-zoom-in">
+                                        </button>
                                     </div>
                                     <div class="glass-card p-1 rounded-lg overflow-hidden h-48 hover:-translate-y-1 transition-transform duration-300">
-                                        <img src="https://i.postimg.cc/MvdHKXHK/000209490016250616.jpg" alt="Photography 4" class="w-full h-full object-cover rounded">
+                                        <button type="button" class="block w-full h-full" onclick="openLightbox(['https://i.postimg.cc/CSRsFGPj/000015340004250511-(1).jpg','https://i.postimg.cc/dVKy6yKr/000055690023250509.jpg','https://i.postimg.cc/0yqwnwq7/000055690029250509.jpg','https://i.postimg.cc/kgdbsbd8/000209490016250616.jpg'], 3)">
+                                            <img src="https://i.postimg.cc/kgdbsbd8/000209490016250616.jpg" alt="Photography 4" class="w-full h-full object-cover rounded cursor-zoom-in">
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -425,6 +438,40 @@
                     </div>
                 </div>
             </section>
+
+            <section id="contact-section" class="py-16 md:py-24 bg-primary-bg border-t border-border-color animate-fade-in">
+                <div class="container mx-auto px-6 max-w-3xl">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-gradient mb-10 text-center">Contact</h2>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <p class="text-text-secondary text-lg mb-8 text-center">
+                            Send me a message and I'll get back to you.
+                        </p>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="contact-name" class="block text-sm font-medium text-text-secondary mb-2">Name</label>
+                                <input id="contact-name" name="name" type="text" class="w-full px-4 py-3 rounded-lg bg-secondary-bg border border-border-color text-text-primary placeholder-text-secondary focus:border-accent focus:outline-none transition-colors" placeholder="Your name" autocomplete="name" />
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-sm font-medium text-text-secondary mb-2">Email</label>
+                                <input id="contact-email" name="email" type="email" class="w-full px-4 py-3 rounded-lg bg-secondary-bg border border-border-color text-text-primary placeholder-text-secondary focus:border-accent focus:outline-none transition-colors" placeholder="you@example.com" autocomplete="email" required />
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block text-sm font-medium text-text-secondary mb-2">Message</label>
+                                <textarea id="contact-message" name="message" rows="6" class="w-full px-4 py-3 rounded-lg bg-secondary-bg border border-border-color text-text-primary placeholder-text-secondary focus:border-accent focus:outline-none transition-colors" placeholder="Write your message..." required></textarea>
+                            </div>
+                            <div id="contact-form-status" class="hidden text-sm text-center"></div>
+                            <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center">
+                                <button id="contact-submit" type="submit" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-accent to-accent-secondary text-white font-semibold rounded-lg hover:from-accent-secondary hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-glow">
+                                    Send Message
+                                </button>
+                                <a href="mailto:kim3217@purdue.edu" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-accent/50 text-text-primary font-medium rounded-lg hover:bg-accent/10 hover:border-accent transition-all duration-300 hover:scale-105">
+                                    Open Mail App
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <section id="project-detail-page" class="view hidden py-16 md:py-20 bg-primary-bg min-h-screen">
@@ -467,8 +514,25 @@
         </section>
     </main>
 
+    <div id="image-lightbox" class="fixed inset-0 z-[60] hidden">
+        <div class="absolute inset-0 bg-black/80" onclick="closeLightbox()"></div>
+        <div class="relative h-full w-full flex items-center justify-center p-4">
+            <button type="button" class="absolute top-6 right-6 text-white/80 hover:text-white transition-colors" onclick="closeLightbox()">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <button id="lightbox-prev" type="button" class="absolute left-4 md:left-10 text-white/80 hover:text-white transition-colors" onclick="prevLightbox()">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <img id="lightbox-image" src="" alt="Enlarged visual" class="w-[92vw] max-w-5xl max-h-[85vh] object-contain rounded-lg border border-border-color shadow-2xl" />
+            <button id="lightbox-next" type="button" class="absolute right-4 md:right-10 text-white/80 hover:text-white transition-colors" onclick="nextLightbox()">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+    </div>
+
     <script>
         const profilePicUrl = 'https://i.postimg.cc/6QXHBbZD/1757079336373.jpg';
+        const LIGHTBOX = { images: [], index: 0 };
         const projects = [
             {
                 id: 'ev-simulation',
@@ -480,6 +544,10 @@
                 paperStatus: 'published',
                 githubLink: '',
                 demoLink: '',
+                demoImages: [
+                    'https://i.postimg.cc/yYsvCW2Q/a2.png',
+                    'https://i.postimg.cc/d0L5NXg3/a1.png'
+                ],
                 thumbnail: 'simulation'
             },
             {
@@ -488,7 +556,7 @@
                 shortDesc: "Implemented a YOLOv7 segmentation framework for automated fence stability assessment in construction sites.",
                 longDesc: "<p>Developed a computer vision solution for automated construction site inspection by implementing a YOLOv7 segmentation framework. This system was specifically designed for the automated assessment of temporary fence stability, significantly improving safety monitoring efficiency.</p><p>The findings from this research have been published and are currently under review in a reputable engineering journal, demonstrating the practical impact and innovative nature of the work. This project deepened my expertise in object detection, image segmentation, and real-world application of machine learning.</p>",
                 skills: ['YOLOv7', 'Computer Vision', 'Machine Learning', 'TensorFlow', 'PyTorch', 'Python'],
-                publications: [{ text: 'Computer Vision-based Temporary Fence Stability Inspection...', url: 'https://doi.org/10.5703/1288284317590' }],
+                publications: [{ text: 'Computer Vision-based Temporary Fence Stability Inspection at Construction Sites for Severe Weather Preparedness', url: '' }],
                 paperStatus: 'published',
                 githubLink: '',
                 demoLink: 'https://drive.google.com/file/d/1KL3wzmhyhwgrOYa8fxnS95g30o0s6ut9/preview',
@@ -500,7 +568,7 @@
                 shortDesc: "Implemented a fine-tuned Alpaca-LoRA multi-modal LLM pipeline with prompt engineering for NLP applications.",
                 longDesc: "<p>Successfully implemented a fine-tuned Alpaca-LoRA multi-modal Large Language Model (LLM) pipeline. This involved advanced prompt engineering techniques to optimize the model's performance for various Natural Language Processing (NLP) tasks.</p><p>This ongoing research project aims to push the boundaries of LLM capabilities, with a paper detailing the methodology and results currently in progress. It showcased my proficiency in state-of-the-art LLM architectures and prompt optimization.</p>",
                 skills: ['LLM', 'Alpaca-LoRA', 'Prompt Engineering', 'Natural Language Processing', 'Python', 'PyTorch', 'TensorFlow'],
-                publications: [{ text: 'Multi-modal Large Language Model Development Framework...', url: 'https://doi.org/10.5703/1288284317590' }],
+                publications: [{ text: 'Multi-modal Large Language Model Development Framework for Construction Site Management: Focusing on Temporary Fences for Severe Weather Preparedness', url: '' }],
                 paperStatus: 'under_review',
                 githubLink: '',
                 demoLink: 'https://drive.google.com/file/d/1iz4KYjoh2nPTa7ObyRt3cDOf_VfzmE91/preview',
@@ -508,7 +576,7 @@
             },
             {
                 id: 'baseball-stats-platform',
-                title: 'Baseball Team Statistics Platform (DB + Web App)',
+                title: 'Three-Tier Architecture: Baseball Team Statistics Database Platform',
                 shortDesc: "Built a relational database-backed web app to manage team stats and automate calculations for players and coaches.",
                 longDesc: "<p>Designed and built a baseball statistics management platform backed by a <strong>relational database</strong>, enabling streamlined stat entry, tracking, and calculation workflows for a team environment.</p><p>Deployed as a web application for convenient access from any device: <a href=\"https://statcalculator.onrender.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-accent hover:underline\">statcalculator.onrender.com</a>.</p><div class=\"mt-6\"><img src=\"https://i.postimg.cc/6649FTBQ/defaultdb.png\" alt=\"Relational database schema\" class=\"w-full rounded-lg border border-border-color\" /></div>",
                 skills: ['Relational Database', 'SQL', 'Web Development', 'Data Modeling'],
@@ -605,7 +673,7 @@
                 const paperBadge = project.paperStatus === 'published'
                     ? `<span class="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-200 border border-emerald-400/30">Published</span>`
                     : project.paperStatus === 'under_review'
-                        ? `<span class="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/20 text-amber-200 border border-amber-400/30">Under Review</span>`
+                        ? `<span class="absolute top-3 right-3 text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/20 text-amber-200 border border-amber-400/30">In Progress</span>`
                         : '';
                 const card = `
                     <div class="project-card p-6 rounded-xl shadow-lg cursor-pointer animate-fade-in delay-${index * 100}" onclick="showProjectDetail('${project.id}')" style="animation-delay: ${index * 0.1}s;">
@@ -719,12 +787,18 @@
                 videoContainer.innerHTML = `
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-secondary-bg rounded-lg">
                         ${project.demoImages.map((src, idx) => `
-                            <a href="${src}" target="_blank" rel="noopener noreferrer" class="block">
-                                <img src="${src}" alt="Project visual ${idx + 1}" class="w-full h-auto rounded-lg border border-border-color" loading="lazy" />
-                            </a>
+                            <button type="button" class="block text-left" data-demo-index="${idx}">
+                                <img src="${src}" alt="Project visual ${idx + 1}" class="project-demo-image w-full h-auto rounded-lg border border-border-color cursor-zoom-in" loading="lazy" />
+                            </button>
                         `).join('')}
                     </div>
                 `;
+                videoContainer.querySelectorAll('button[data-demo-index]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = Number(btn.getAttribute('data-demo-index'));
+                        openLightbox(project.demoImages, idx);
+                    });
+                });
             } else if (project.demoLink) {
                 videoContainer.classList.add('aspect-video');
                 videoContainer.innerHTML = `
@@ -785,6 +859,9 @@
             } else if (hash.startsWith('#skills')) {
                  showPage('home-page');
                  scrollToSection('skills-section');
+            } else if (hash.startsWith('#contact')) {
+                 showPage('home-page');
+                 scrollToSection('contact-section');
             } else if (hash.startsWith('#interests')) {
                  showPage('home-page');
                  scrollToSection('interests-section');
@@ -825,6 +902,106 @@
             document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
         }
 
+        function openLightbox(images, startIndex) {
+            LIGHTBOX.images = Array.isArray(images) ? images : [];
+            LIGHTBOX.index = Math.max(0, Math.min(startIndex || 0, LIGHTBOX.images.length - 1));
+            document.getElementById('image-lightbox').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            renderLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('image-lightbox').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function renderLightbox() {
+            const img = document.getElementById('lightbox-image');
+            const prev = document.getElementById('lightbox-prev');
+            const next = document.getElementById('lightbox-next');
+            img.src = LIGHTBOX.images[LIGHTBOX.index] || '';
+            prev.style.display = LIGHTBOX.images.length > 1 ? '' : 'none';
+            next.style.display = LIGHTBOX.images.length > 1 ? '' : 'none';
+        }
+
+        function nextLightbox() {
+            if (!LIGHTBOX.images.length) return;
+            LIGHTBOX.index = (LIGHTBOX.index + 1) % LIGHTBOX.images.length;
+            renderLightbox();
+        }
+
+        function prevLightbox() {
+            if (!LIGHTBOX.images.length) return;
+            LIGHTBOX.index = (LIGHTBOX.index - 1 + LIGHTBOX.images.length) % LIGHTBOX.images.length;
+            renderLightbox();
+        }
+
+        async function submitContactForm(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('contact-form-status');
+            const submitBtn = document.getElementById('contact-submit');
+
+            if (!form || !status || !submitBtn) return;
+
+            const name = (document.getElementById('contact-name')?.value || '').trim();
+            const email = (document.getElementById('contact-email')?.value || '').trim();
+            const message = (document.getElementById('contact-message')?.value || '').trim();
+
+            if (!email || !message) {
+                status.className = 'text-sm text-center text-red-300';
+                status.textContent = 'Please provide your email and a message.';
+                status.classList.remove('hidden');
+                return;
+            }
+
+            const endpoint = 'https://formspree.io/f/xdagkvld';
+
+            status.className = 'text-sm text-center text-text-secondary';
+            status.textContent = 'Sending...';
+            status.classList.remove('hidden');
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+            try {
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                if (res.ok) {
+                    status.className = 'text-sm text-center text-emerald-300';
+                    status.textContent = "Thanks — your message was sent.";
+                    form.reset();
+                } else {
+                    status.className = 'text-sm text-center text-red-300';
+                    status.textContent = 'Something went wrong. Please try again or use the mail link.';
+                }
+            } catch (e) {
+                status.className = 'text-sm text-center text-red-300';
+                status.textContent = 'Network error. Please try again or use the mail link.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+            }
+        }
+
+        window.LEADERSHIP_CAROUSEL_INDEX = 0;
+        function initLeadershipCarousel() {
+            const img = document.getElementById('leadership-carousel-image');
+            if (!img) return;
+            const images = ['https://i.postimg.cc/BZBJ3R1Y/IMG_4588.jpg', 'https://i.postimg.cc/zGk57LKS/DSC01696.jpg'];
+            setInterval(() => {
+                window.LEADERSHIP_CAROUSEL_INDEX = (window.LEADERSHIP_CAROUSEL_INDEX + 1) % images.length;
+                img.src = images[window.LEADERSHIP_CAROUSEL_INDEX];
+            }, 3500);
+        }
+
         menuButton.addEventListener('click', toggleMobileMenu);
         closeMenuButton.addEventListener('click', toggleMobileMenu);
 
@@ -833,6 +1010,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderProjectCards();
             renderSkillsSection();
+            initLeadershipCarousel();
+            document.getElementById('contact-form')?.addEventListener('submit', submitContactForm);
             handleHashChange(); // Check hash on load
         });
 
