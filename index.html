@@ -213,12 +213,11 @@
                 </h1>
             </div>
             <nav class="hidden md:flex space-x-6 animate-slide-in-right">
-                <a href="#about" onclick="showPage('home-page'); scrollToSection('hero');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">About Me</a>
-                <a href="#projects" onclick="showPage('home-page'); scrollToSection('projects-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Projects</a>
-                <a href="#skills" onclick="showPage('home-page'); scrollToSection('skills-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Skills</a>
-                <a href="#interests" onclick="showPage('home-page'); scrollToSection('interests-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Interests</a>
-                <a href="#resume" onclick="showPage('home-page'); scrollToSection('resume-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Resume</a>
-                <a href="#contact" onclick="showPage('home-page'); scrollToSection('contact-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform">Contact</a>
+                <a onclick="scrollToSection('hero');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform cursor-pointer">About Me</a>
+                <a onclick="scrollToSection('projects-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform cursor-pointer">Projects</a>
+                <a onclick="scrollToSection('skills-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform cursor-pointer">Skills</a>
+                <a onclick="scrollToSection('interests-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform cursor-pointer">Interests</a>
+                <a onclick="scrollToSection('resume-section');" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium hover:scale-105 transform cursor-pointer">Resume</a>
                 <a href="https://linkedin.com/in/TrKim" target="_blank" rel="noopener noreferrer" class="text-text-primary hover:text-gradient transition-all duration-300 font-medium flex items-center hover:scale-105 transform">
                     LinkedIn
                     <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2zM8 11v7h3v-7H8zm1.5-3.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18 17.5c0-4.5-3.5-4.2-3.5-4.2V11h-3v7h3v-3.8c0-1.5 1-1.3 1-1.3s1 0 1 1.3V18h3v-6.5c0-2.3-1.5-3.5-3.5-3.5z"/></svg>
@@ -228,17 +227,16 @@
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="fixed inset-0 bg-primary-bg/95 backdrop-blur-lg z-40 hidden flex flex-col items-center justify-center space-y-8 text-2xl font-display font-medium border-l border-r border-accent/20">
+        <div id="mobile-menu" class="fixed inset-0 z-50 hidden flex flex-col items-center justify-center space-y-6 text-2xl font-display font-medium pt-16" style="background-color: #0f0f23;">
             <button id="close-menu-button" class="absolute top-6 right-6 text-text-primary hover:text-gradient focus:outline-none transition-colors duration-300">
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
-            <a href="#about" onclick="showPage('home-page'); scrollToSection('hero'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">About Me</a>
-            <a href="#projects" onclick="showPage('home-page'); scrollToSection('projects-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Projects</a>
-            <a href="#skills" onclick="showPage('home-page'); scrollToSection('skills-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Skills</a>
-            <a href="#interests" onclick="showPage('home-page'); scrollToSection('interests-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Interests</a>
-            <a href="#resume" onclick="showPage('home-page'); scrollToSection('resume-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Resume</a>
-            <a href="#contact" onclick="showPage('home-page'); scrollToSection('contact-section'); toggleMobileMenu();" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105">Contact</a>
-            <a href="https://linkedin.com/in/TrKim" target="_blank" rel="noopener noreferrer" class="px-8 py-3 rounded-xl bg-secondary-bg/70 border border-border-color/60 shadow-lg text-text-primary hover:text-gradient transition-all duration-300 flex items-center transform hover:scale-105">
+            <a onclick="scrollToSection('hero'); toggleMobileMenu();" class="px-8 py-4 rounded-xl text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105 cursor-pointer">About Me</a>
+            <a onclick="scrollToSection('projects-section'); toggleMobileMenu();" class="px-8 py-4 rounded-xl text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105 cursor-pointer">Projects</a>
+            <a onclick="scrollToSection('skills-section'); toggleMobileMenu();" class="px-8 py-4 rounded-xl text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105 cursor-pointer">Skills</a>
+            <a onclick="scrollToSection('interests-section'); toggleMobileMenu();" class="px-8 py-4 rounded-xl text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105 cursor-pointer">Interests</a>
+            <a onclick="scrollToSection('resume-section'); toggleMobileMenu();" class="px-8 py-4 rounded-xl text-text-primary hover:text-gradient transition-all duration-300 transform hover:scale-105 cursor-pointer">Resume</a>
+            <a href="https://linkedin.com/in/TrKim" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl text-text-primary hover:text-gradient transition-all duration-300 flex items-center transform hover:scale-105">
                 LinkedIn
                 <svg class="ml-2 w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 01-2-2V4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2zM8 11v7h3v-7H8zm1.5-3.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18 17.5c0-4.5-3.5-4.2-3.5-4.2V11h-3v7h3v-3.8c0-1.5 1-1.3 1-1.3s1 0 1 1.3V18h3v-6.5c0-2.3-1.5-3.5-3.5-3.5z"/></svg>
             </a>
@@ -297,12 +295,12 @@
                                 </div>
                                 
                                 <div class="mt-8 flex flex-wrap gap-4">
-                                    <a href="#projects" onclick="scrollToSection('projects-section')" class="px-6 py-3 bg-gradient-to-r from-accent to-accent-secondary text-white font-semibold rounded-lg hover:from-accent-secondary hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-glow flex items-center group">
+                                    <a onclick="scrollToSection('projects-section')" class="px-6 py-3 bg-gradient-to-r from-accent to-accent-secondary text-white font-semibold rounded-lg hover:from-accent-secondary hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-glow flex items-center group cursor-pointer">
                                         View Projects
                                         <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
                                     </a>
-                                    <a href="#contact" onclick="scrollToSection('contact-section')" class="px-6 py-3 bg-transparent border border-accent/50 text-text-primary font-medium rounded-lg hover:bg-accent/10 hover:border-accent transition-all duration-300 hover:scale-105">
-                                        Contact Me
+                                    <a onclick="scrollToSection('resume-section')" class="px-6 py-3 bg-transparent border border-accent/50 text-text-primary font-medium rounded-lg hover:bg-accent/10 hover:border-accent transition-all duration-300 hover:scale-105 cursor-pointer">
+                                        View Resume
                                     </a>
                                 </div>
                             </div>
@@ -401,9 +399,8 @@
                             </p>
                             
                             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                <a href="https://drive.google.com/uc?export=download&id=1JHcUYyLF0tFKSpiyooB1XrhNxugqtZsC" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer" 
+                                <a href="Tae Rim Kim Resume.pdf" 
+                                   download="Tae Rim Kim Resume.pdf"
                                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent to-accent-secondary text-white font-semibold rounded-lg hover:from-accent-secondary hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-glow group">
                                     <svg class="w-5 h-5 mr-2 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -424,9 +421,9 @@
                         
                         <div id="resume-preview" class="hidden animate-fade-in">
                             <div class="border border-border-color rounded-lg overflow-hidden bg-primary-bg/50">
-                                <div class="aspect-[8.5/11] max-h-[600px] overflow-hidden flex justify-center">
-                                    <iframe src="https://drive.google.com/file/d/1JHcUYyLF0tFKSpiyooB1XrhNxugqtZsC/preview" 
-                                            class="w-full h-full max-w-full" 
+                                <div class="h-[700px] flex justify-center">
+                                    <iframe src="Tae Rim Kim Resume.pdf" 
+                                            class="w-full h-full" 
                                             title="Resume Preview">
                                     </iframe>
                                 </div>
@@ -615,6 +612,22 @@
                 ],
                 thumbnail: 'data'
             },
+            {
+                id: 'photography-manager',
+                title: 'Local-First Hybrid Photography Manager',
+                shortDesc: "Designed a privacy-centric Electron desktop application for managing digital and film photography workflows with a built-in mobile access server.",
+                longDesc: "<p>Engineered a sophisticated, <strong>locally-hosted desktop application</strong> built with Electron to provide comprehensive management for both digital and film photography. The system prioritizes data privacy by utilizing a local file system architecture with JSON-based metadata, ensuring 100% data ownership without cloud dependencies.</p><p>The application integrates a background <strong>Express.js web server</strong> to enable secure mobile access over local networks and utilizes the <strong>Sharp library</strong> for high-performance image processing. It features specialized modules for tracking film stocks, development data, and camera inventory, effectively bridging the gap between analog and digital workflows.</p>",
+                skills: ['Electron', 'Node.js', 'Express.js', 'JavaScript', 'Image Processing', 'Sharp', 'CSS3'],
+                publications: [],
+                paperStatus: '',
+                githubLink: '',
+                demoLink: '',
+                demoImages: [
+                    'https://i.postimg.cc/XJB7J9tD/Screenshot-2026-02-01-232225.png',
+                    'https://i.postimg.cc/FHKvzjLt/Screenshot-2026-02-01-232508.png'
+                ],
+                thumbnail: 'camera'
+            },
         ];
 
         // Grouped Skills Data Structure
@@ -659,7 +672,8 @@
                 'web': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>',
                 'data': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>',
                 'simulation': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>',
-                'baseball': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 6.5c1.8 1.2 3 3.2 3 5.5 0 1.6-.6 3.1-1.6 4.2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 6.5c-1.8 1.2-3 3.2-3 5.5 0 1.6.6 3.1 1.6 4.2"></path></svg>'
+                'baseball': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 6.5c1.8 1.2 3 3.2 3 5.5 0 1.6-.6 3.1-1.6 4.2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 6.5c-1.8 1.2-3 3.2-3 5.5 0 1.6.6 3.1 1.6 4.2"></path></svg>',
+                'camera': '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>'
             };
             return icons[type] || '<svg class="w-16 h-16 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>';
         }
